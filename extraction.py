@@ -12,7 +12,7 @@ TOLERANCE_DA = 0.02
 
 def extract_eics(input_file, output_dir, mz_list):
     """
-    Extract EICs from input_file based on all m/z values provided in list.
+    Extract EICs from `input_file` based on all m/z values provided in list.
     """
     base_name = os.path.splitext(os.path.basename(input_file))[0]
     out_file = os.path.join(output_dir, f"{base_name}_EICs.csv")
@@ -50,7 +50,7 @@ def extract_eics(input_file, output_dir, mz_list):
 
 def batch_convert(input_dir, output_dir):
     """
-    Convert all .cdf files in input_dir to .csv files in output_dir.\n
+    Convert all .CDF files in `input_dir` to .CSV files in `output_dir`.\n
     Expects file names to start with either 'PA66' or 'PA6'.
     """
     for file in os.listdir(input_dir):
