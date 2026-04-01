@@ -9,10 +9,6 @@ MZ_TARGETS_PA6 = [114.0913, 132.1019, 245.1860, 227.1754, 358.2700, 340.2595, 47
 
 TOLERANCE_DA = 0.02
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_DIR = os.path.join(BASE_DIR, "input")
-OUTPUT_DIR = os.path.join(BASE_DIR, "output")
-
 
 def extract_eics(input_file, output_dir, mz_list):
     """
@@ -52,12 +48,14 @@ def extract_eics(input_file, output_dir, mz_list):
     print(f"Saved combined EIC CSV: {out_file}")
 
 
-if __name__ == "__main__":
-    
-    # convert all .cdf files in input data dir to .csv files in output data dir
-    for file in os.listdir(INPUT_DIR):
+def batch_convert(input_dir, output_dir):
+    """
+    Convert all .cdf files in input_dir to .csv files in output_dir.\n
+    Expects file names to start with either 'PA66' or 'PA6'.
+    """
+    for file in os.listdir(input_dir):
         if file.lower().endswith((".nc", ".cdf")):
-            input_file = os.path.join(INPUT_DIR, file)
+            input_file = os.path.join(input_dir, file)
 
             # choose targets based on PA substrate indicated in file name
             if file.upper().startswith("PA66"):
@@ -65,4 +63,11 @@ if __name__ == "__main__":
             else:
                 mz_list = MZ_TARGETS_PA6
             
-            extract_eics(input_file, OUTPUT_DIR, mz_list)
+            extract_eics(input_file, output_dir, mz_list)
+
+
+if __name__ == "__main__":
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    input_dir = os.path.join(base_dir, "input")
+    output_dir = os.path.join(base_dir, "output")
+    batch_convert(input_dir, output_dir)
