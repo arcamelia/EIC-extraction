@@ -1,7 +1,6 @@
 import os
-import pandas as pd
-import xarray as xr
 import numpy as np
+import pandas as pd
 from netCDF4 import Dataset
 
 MZ_TARGETS_PA66 = [117.1386, 227.1754, 245.1860, 343.3068, 453.3435, 471.3541, 679.5117, 697.5222]
