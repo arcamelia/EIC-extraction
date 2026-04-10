@@ -8,6 +8,11 @@ This repository contains a Python script that allows you to prepare chromatogram
 ## Requirements
 - Python is installed on your machine
 
+- Additional Python modules are installed on your machine (information on how to install these is easily accessible online):
+    - numpy
+    - pandas
+    - netCDF4
+
 - The file path to the `Downloads` folder on your machine
 
     - On Windows, you can get the path of a folder by right clicking on the folder, then clicking 'Copy as path'
