@@ -22,7 +22,7 @@ This repository contains a Python script that allows you to prepare chromatogram
 ## Procedure
 1. Export MS data as a netCDF file from Compass on the MS data analysis computer (right click on File -> Export -> Export Chromatogram Analysis -> name file with correct prefix -> save as CDF file).
 
-    - __Hint:__ The file name should begin with either of the following prefixes: 'PA66', 'PA6'. This determines which set of m/z values are extracted from the data. If neither of these prefixes are used, the script will not execute successfully.
+    - __Hint:__ The file name should begin with either of the following prefixes: `PA66`, `PA6`. This determines which set of m/z values are extracted from the data. If neither of these prefixes are used, the script will not execute successfully.
 
     - __Hint:__ Repeat this step for every file that you want to analyze (the script allows you to input multiple CDF files at once). 
 
